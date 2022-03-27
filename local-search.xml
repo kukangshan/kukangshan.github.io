@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title>女生十八，一枝花</title>
-    <link href="/2022/03/27/%E5%A5%B3%E7%94%9F%E5%8D%81%E5%85%AB%EF%BC%8C%E4%B8%80%E6%9E%9D%E8%8A%B1/"/>
-    <url>/2022/03/27/%E5%A5%B3%E7%94%9F%E5%8D%81%E5%85%AB%EF%BC%8C%E4%B8%80%E6%9E%9D%E8%8A%B1/</url>
+    <title>康康的博客搭建</title>
+    <link href="/2022/03/28/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    <url>/2022/03/28/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
     
-    <content type="html"><![CDATA[<p>##第一章</p><p>大家总想年轻一点</p><hr><p>##参考文献</p>]]></content>
+    <content type="html"><![CDATA[<p>在磨蹭了好久后，终于搭建自己的博客，什么事情都要去做而不是一直拖延，做完一件事情真的不错的。下面我来简单介绍一下我的博客搭建（Windows，hexo，GitHub）。</p><h2 id="搭建博客所需的工具"><a href="#搭建博客所需的工具" class="headerlink" title="搭建博客所需的工具"></a>搭建博客所需的工具</h2><ul><li><p>Node.js的<a href="https://nodejs.org/">下载</a></p></li><li><p>Git的下载（这个因为我之前学校实验周，和室友就用过Git，所以直接用了，下载可以到csdn或者b站上面看看）</p></li><li><p>GitHub的账号————后续博客可以推到远端</p></li><li><p>一个可以用的电脑（搭建博客其实没有那么难，很多框架可以用，我就用的hexo）</p><p>ps：在做完node和git下载后，要检查是否下载成功，进入windows“运行”菜单（windows+R）</p><figure class="highlight crmsh"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><pre><code class="hljs crmsh"><span class="hljs-keyword">node</span> <span class="hljs-title">-v</span>;<br>npm -v;<br>git -<span class="hljs-keyword">version</span>;<br></code></pre></td></tr></table></figure><p>还有Hexo下载</p><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs abnf">npm install hexo-cli -g<span class="hljs-comment">;</span><br>hexo -v<span class="hljs-comment">;//检查hexo</span><br></code></pre></td></tr></table></figure></li></ul><h2 id="搭建仓库"><a href="#搭建仓库" class="headerlink" title="搭建仓库"></a>搭建仓库</h2>]]></content>
     
     
     
