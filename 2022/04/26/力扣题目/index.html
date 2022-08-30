@@ -24,7 +24,7 @@
 <meta property="og:description" content="4月26号今日题目：883. 三维形体投影面积 思考：题解：反思：4月27号今日题目：417. 太平洋大西洋水流问题 思考：1、先对靠着海洋的格子进行讨论（特殊情况），设置一个数列direct【result【i】】&#x3D;{1，2，3，4}（左，上，右，下），然后再讨论里面的格子，讨论周围的格子大小，给格子附上下级格子的direct，最后有1、2是太平洋，3、4是大西洋。 题解：反思：4月28">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-26T15:36:58.000Z">
-<meta property="article:modified_time" content="2022-05-07T17:01:25.423Z">
+<meta property="article:modified_time" content="2022-08-30T15:39:10.829Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -196,7 +196,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      628 字
+      1.5k 字
     </span>
   
 
@@ -205,7 +205,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6 分钟
+      13 分钟
     </span>
   
 
@@ -258,7 +258,12 @@
 <h3 id="题解：-7"><a href="#题解：-7" class="headerlink" title="题解："></a>题解：</h3><h3 id="反思：-7"><a href="#反思：-7" class="headerlink" title="反思："></a>反思：</h3><h2 id="5月8号"><a href="#5月8号" class="headerlink" title="5月8号"></a>5月8号</h2><p>今日题目：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-all-duplicates-in-an-array/">442. 数组中重复的数据</a></p>
 <h3 id="思考：-8"><a href="#思考：-8" class="headerlink" title="思考："></a>思考：</h3><p>n^2很简单，n的话还是思考一下。</p>
 <h3 id="题解：-8"><a href="#题解：-8" class="headerlink" title="题解："></a>题解：</h3><h3 id="反思：-8"><a href="#反思：-8" class="headerlink" title="反思："></a>反思：</h3><p>我连<code>时间复杂度</code>都忘记了差不多了</p>
+<h2 id="8月30号"><a href="#8月30号" class="headerlink" title="8月30号"></a>8月30号</h2><p>今日题目：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-binary-tree-ii/">998. 最大二叉树 II</a></p>
+<h3 id="思考：-9"><a href="#思考：-9" class="headerlink" title="思考："></a>思考：</h3><h3 id="题解：-9"><a href="#题解：-9" class="headerlink" title="题解："></a>题解：</h3><figure class="highlight c++"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></div></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * struct TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode *left;</span><br><span class="hljs-comment"> *     TreeNode *right;</span><br><span class="hljs-comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span><br><span class="hljs-comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span><br><span class="hljs-comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span><br><span class="hljs-comment"> * &#125;;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">TreeNode* <span class="hljs-title">insertIntoMaxTree</span><span class="hljs-params">(TreeNode* root, <span class="hljs-type">int</span> val)</span> </span>&#123;<br>        TreeNode* parent = <span class="hljs-literal">nullptr</span>;<br>        TreeNode* cur = root;<br>        <span class="hljs-keyword">while</span> (cur) &#123;<br>            <span class="hljs-keyword">if</span> (val &gt; cur-&gt;val) &#123;<br>                <span class="hljs-keyword">if</span> (!parent) &#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">TreeNode</span>(val, root, <span class="hljs-literal">nullptr</span>);<span class="hljs-comment">//实例一</span><br>                &#125;<br>                TreeNode* node = <span class="hljs-keyword">new</span> <span class="hljs-built_in">TreeNode</span>(val, cur, <span class="hljs-literal">nullptr</span>);<br>                parent-&gt;right = node;<br>                <span class="hljs-keyword">return</span> root;<span class="hljs-comment">//实例三</span><br>            &#125;<br>            <span class="hljs-keyword">else</span> &#123;<br>                parent = cur;<br>                cur = cur-&gt;right;<br>            &#125;<br>        &#125;<br>        parent-&gt;right = <span class="hljs-keyword">new</span> <span class="hljs-built_in">TreeNode</span>(val);<br>        <span class="hljs-keyword">return</span> root;<span class="hljs-comment">//实例二</span><br>    &#125;<br>&#125;;<br><br></code></pre></td></tr></table></figure>
 
+
+
+<h3 id="反思：-9"><a href="#反思：-9" class="headerlink" title="反思："></a>反思：</h3>
             </div>
             <hr>
             <div>
