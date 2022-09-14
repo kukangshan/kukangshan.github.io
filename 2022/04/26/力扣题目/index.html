@@ -24,7 +24,7 @@
 <meta property="og:description" content="4月26号今日题目：883. 三维形体投影面积 思考：题解：反思：4月27号今日题目：417. 太平洋大西洋水流问题 思考：1、先对靠着海洋的格子进行讨论（特殊情况），设置一个数列direct【result【i】】&#x3D;{1，2，3，4}（左，上，右，下），然后再讨论里面的格子，讨论周围的格子大小，给格子附上下级格子的direct，最后有1、2是太平洋，3、4是大西洋。 题解：反思：4月28">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-26T15:36:58.000Z">
-<meta property="article:modified_time" content="2022-09-04T15:47:42.583Z">
+<meta property="article:modified_time" content="2022-09-14T15:31:27.729Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -196,7 +196,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      3k 字
+      3.4k 字
     </span>
   
 
@@ -205,7 +205,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      25 分钟
+      29 分钟
     </span>
   
 
@@ -274,7 +274,13 @@
 
 
 
-<h3 id="反思：-11"><a href="#反思：-11" class="headerlink" title="反思："></a>反思：</h3>
+<h3 id="反思：-11"><a href="#反思：-11" class="headerlink" title="反思："></a>反思：</h3><h2 id="9月13号"><a href="#9月13号" class="headerlink" title="9月13号"></a>9月13号</h2><p>今日题目：</p>
+<h3 id="思考：-12"><a href="#思考：-12" class="headerlink" title="思考："></a>思考：</h3><p>答案的精确度?</p>
+<h3 id="题解：-12"><a href="#题解：-12" class="headerlink" title="题解："></a>题解：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">double</span> <span class="hljs-title">trimMean</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; arr)</span> </span>&#123;<br>        <span class="hljs-type">int</span> n = arr.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-built_in">sort</span>(arr.<span class="hljs-built_in">begin</span>(), arr.<span class="hljs-built_in">end</span>());<span class="hljs-comment">//void sort (RandomAccessIterator first, RandomAccessIterator last, Compare comp);</span><br><span class="hljs-comment">// （1）第一个参数first：是要排序的数组的起始地址。</span><br><span class="hljs-comment">// （2）第二个参数last：是结束的地址（最后一个数据的后一个数据的地址）</span><br><span class="hljs-comment">// （3）第三个参数comp是排序的方法：可以是从升序也可是降序。如果第三个参数不写，则默认的排序方法是从小到大排序。</span><br><br>        <span class="hljs-type">int</span> partialSum = <span class="hljs-built_in">accumulate</span>(arr.<span class="hljs-built_in">begin</span>() + n / <span class="hljs-number">20</span>, arr.<span class="hljs-built_in">begin</span>() + (<span class="hljs-number">19</span> * n / <span class="hljs-number">20</span>), <span class="hljs-number">0</span>);<br>        <span class="hljs-comment">//累加求和</span><br>        <span class="hljs-keyword">return</span> partialSum / (n * <span class="hljs-number">0.9</span>);<br>        <span class="hljs-comment">//会有误差</span><br>    &#125;<br>&#125;;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="反思：-12"><a href="#反思：-12" class="headerlink" title="反思："></a>反思：</h3>
             </div>
             <hr>
             <div>
